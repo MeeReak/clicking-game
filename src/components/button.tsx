@@ -17,7 +17,7 @@ const Button: React.FC<ButtonProps> = ({
     <button
       onClick={onClick}
       disabled={disabled}
-      className={`bg-white text-gray-800 rounded-[5px] px-12 py-2 ${className}`}
+      className={` text-gray-800 rounded-[5px] px-12 py-2 ${className}`}
     >
       {children}
     </button>
