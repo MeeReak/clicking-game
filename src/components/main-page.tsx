@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Button from "./button";
 import { AlertDialogDemo } from "./alert";
+import { ModeToggle } from "./toggle-mode";
 
 export const Main = () => {
   const [time, setTime] = useState<number>(0);
@@ -66,14 +67,18 @@ export const Main = () => {
         time={finalTime!} // Pass final time directly
         click={finalClicks!} // Pass final clicks directly
       />
-      <main className="h-screen flex flex-col items-center justify-center relative bg-black">
+      <main className="h-screen flex flex-col items-center justify-center relative ">
+        <div className="absolute top-5 right-5">
+          <ModeToggle />
+        </div>
+
         <div className="flex items-center gap-2 pr-4">
           <Image alt="mouse" src={"/left-click.png"} width={50} height={50} />
           <p className="text-4xl sm:text-5xl font-extrabold text-[#02a8f5]">
-            Clicking <span className="text-white">Game</span>
+            Clicking <span className="text-[#f7dd11]">Game</span>
           </p>
         </div>
-        <p className="text-lg text-white sm:text-xl py-4">
+        <p className="text-lg text-[#f7dd11] sm:text-xl py-4">
           Put your finger-clicking speed to the test
         </p>
         <div className="sm:gap-8 gap-2 flex px-2">
